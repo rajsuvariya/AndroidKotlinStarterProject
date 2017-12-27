@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Created by @raj on 26/12/17.
  */
-class ApiClient (mContext: Context){
+class ApiClient (){
 
     private lateinit var mRetrofit: Retrofit
     private var mApiServiceEndPoints : ApiEndpoints? = null
@@ -50,9 +50,9 @@ class ApiClient (mContext: Context){
     companion object {
         private var mInstance : ApiClient? = null
 
-        fun getInstance(mContext: Context) : ApiClient {
+        fun getInstance() : ApiClient {
             if(mInstance == null){
-                mInstance = ApiClient(mContext)
+                mInstance = ApiClient()
             }
             return mInstance!!
         }

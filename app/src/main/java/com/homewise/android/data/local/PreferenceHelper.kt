@@ -13,7 +13,7 @@ class PreferenceHelper @Inject constructor(@ApplicationContext context: Context)
 
     val PREF_FILE_NAME = "_shared_prefs_file"
 
-    private lateinit var mPref: ObscuredSharedPreferences
+    private var mPref: ObscuredSharedPreferences
 
     fun clear() {
         mPref.edit().clear().apply()

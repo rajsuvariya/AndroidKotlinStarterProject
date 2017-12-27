@@ -1,21 +1,22 @@
 package com.homewise.android.ui.home
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.support.v7.app.AppCompatActivity
 import com.homewise.android.R
-import com.homewise.android.data.local.AppPreferenceManager
-import com.homewise.android.data.local.PreferenceHelper
-import com.homewise.android.data.local.PreferenceManager
-import com.homewise.android.data.remote.ApiManager
-import com.homewise.android.data.remote.AppApiManager
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import com.homewise.android.ui.base.BaseActivity
+import javax.inject.Inject
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
+
+    @Inject
+    lateinit var mPresenter : HomePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+//        getActivityComponent().inject(this)
+
+        mPresenter.getWelcomeMessage()
     }
 }

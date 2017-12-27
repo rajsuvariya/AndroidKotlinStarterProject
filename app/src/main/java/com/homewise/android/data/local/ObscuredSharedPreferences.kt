@@ -21,8 +21,8 @@ class ObscuredSharedPreferences : SharedPreferences {
     private var SEKRIT: CharArray? = null
 
 
-    protected lateinit var delegate: SharedPreferences
-    protected lateinit var context: Context
+    protected var delegate: SharedPreferences
+    protected var context: Context
 
     //Set to true if a decryption error was detected
     //in the case of float, int, and long we can tell if there was a parse error
