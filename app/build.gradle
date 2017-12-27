@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
 
 android {
@@ -60,6 +60,7 @@ dependencies {
     // injection
     implementation 'com.google.dagger:dagger:2.8'
     annotationProcessor "com.google.dagger:dagger-compiler:2.8"
+    kapt "com.google.dagger:dagger-compiler:2.8"
     provided 'javax.annotation:jsr250-api:1.0'
     implementation 'javax.inject:javax.inject:1'
 

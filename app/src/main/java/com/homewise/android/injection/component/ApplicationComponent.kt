@@ -15,13 +15,11 @@ import dagger.Component;
  * Created by @raj on 27/12/17.
  */
 @Singleton
-@Component(modules = ApplicationModule.class)
-public interface ApplicationComponent {
+@Component(modules = arrayOf(ApplicationModule::class))
+interface ApplicationComponent {
 
-    void inject (HomeWiseApplication homeWiseApplication);
+    fun inject(homeWiseApplication: HomeWiseApplication)
 
-//    DataManager getDataManager() ;
-//
-//    @ApplicationContext
-//    Context getApplicationContext();
+    fun getDataManager(): DataManager
+
 }

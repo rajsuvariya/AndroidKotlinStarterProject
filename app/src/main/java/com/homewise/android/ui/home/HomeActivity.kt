@@ -7,7 +7,7 @@ import com.homewise.android.ui.base.BaseActivity
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity() {
-
+//
     @Inject
     lateinit var mPresenter : HomePresenter
 
@@ -15,7 +15,7 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-//        getActivityComponent().inject(this)
+        getActivityComponent().inject(this)
 
         mPresenter.getWelcomeMessage()
     }

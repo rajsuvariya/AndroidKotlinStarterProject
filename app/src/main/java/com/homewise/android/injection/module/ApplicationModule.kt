@@ -20,40 +20,34 @@ import dagger.Provides;
  * Created by @raj on 27/12/17.
  */
 @Module
-public class ApplicationModule {
-
-    private Application mApplication;
-
-    public ApplicationModule(Application app){
-        mApplication = app;
-    }
+class ApplicationModule(private val mApplication: Application) {
 
     @Provides
     @ApplicationContext
-    Context provideApplicationContext()  {
-        return mApplication;
+    internal fun provideApplicationContext(): Context {
+        return mApplication
     }
 
     @Provides
-    Application provideApplication() {
-        return mApplication;
-    }
-
-    @Provides
-    @Singleton
-    DataManager provideDataManager(AppDataManager appDataManager) {
-        return appDataManager;
+    internal fun provideApplication(): Application {
+        return mApplication
     }
 
     @Provides
     @Singleton
-    ApiManager provideApiManager(AppApiManager appApiManager) {
-        return appApiManager;
+    internal fun provideDataManager(appDataManager: AppDataManager): DataManager {
+        return appDataManager
     }
 
     @Provides
     @Singleton
-    PreferenceManager providePreferenceManager(AppPreferenceManager appPreferenceManager) {
-        return appPreferenceManager;
+    internal fun provideApiManager(appApiManager: AppApiManager): ApiManager {
+        return appApiManager
+    }
+
+    @Provides
+    @Singleton
+    internal fun providePreferenceManager(appPreferenceManager: AppPreferenceManager): PreferenceManager {
+        return appPreferenceManager
     }
 }
