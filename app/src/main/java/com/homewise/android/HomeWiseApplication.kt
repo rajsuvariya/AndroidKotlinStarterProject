@@ -1,6 +1,7 @@
 package com.homewise.android
 
 import android.app.Application
+import android.content.Context
 import com.crashlytics.android.Crashlytics
 import com.homewise.android.injection.component.ApplicationComponent
 import com.homewise.android.injection.component.DaggerApplicationComponent
@@ -30,5 +31,11 @@ class HomeWiseApplication : Application() {
 
     fun getApplictionComponent(): ApplicationComponent {
         return mApplicationComponent
+    }
+
+    companion object {
+        fun get(context: Context) : HomeWiseApplication{
+            return context.applicationContext as HomeWiseApplication
+        }
     }
 }

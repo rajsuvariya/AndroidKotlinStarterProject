@@ -6,6 +6,7 @@ import com.homewise.android.injection.ActivityContext
 
 import dagger.Module;
 import dagger.Provides;
+import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Created by Shashank on 28/09/17.
@@ -26,5 +27,8 @@ class ActivityModule(activity: Activity) {
         return mActivity
     }
 
-
+    @Provides
+    internal fun provideCompositeDisposable(): CompositeDisposable {
+        return CompositeDisposable()
+    }
 }
